@@ -1,7 +1,7 @@
 import { extractNumbers } from './src/parser.js';
 import {
   validateStringNotEmpty,
-  validateNumber,
+  validateNumber
 } from './src/util/validation.js';
 import { add } from './src/math.js';
 import { transformToNumber } from './src/util/numbers.js';
@@ -15,7 +15,7 @@ function formSubmitHandler(event) {
   const numberInputs = extractNumbers(formData);
 
   let result = '';
-  
+
   try {
     const numbers = [];
     for (const numberInput of numberInputs) {
