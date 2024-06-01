@@ -16,3 +16,7 @@ it('returns 0 for an empty array', () => {
 it('works with negative numbers', () => {
   expect(add([-1, -2, -3])).toBe(-6);
 });
+
+it('throws an error for non-numeric values', () => {
+  expect(() => add(['a', 'b', 'c'])).toThrowError('Invalid input');
+});
