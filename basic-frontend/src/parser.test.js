@@ -21,3 +21,11 @@ it('throws an error for a form with invalid input', () => {
   formData.append('num2', 'b');
   expect(() => extractNumbers(formData)).toThrowError('Invalid input');
 });
+
+it('extracts two numbers from a form with a leading zero', () => {
+  const formData = new FormData();
+  formData.append('num1', '01');
+  formData.append('num2', '02');
+  const numbers = extractNumbers(formData);
+  expect(numbers).toEqual([1, 2]);
+});
